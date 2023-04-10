@@ -1,0 +1,59 @@
+/*ASSUNTO: [PLANNE] Uma tarefa foi atribuída a você!*/
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.5;
+		}
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		th, td {
+			padding: 8px;
+			text-align: left;
+			border: 1px solid #ddd;
+		}
+		th {
+			background-color: #f2f2f2;
+			font-weight: bold;
+		}
+		.button {
+			background-color: orange;
+			color: white;
+			display: inline-block;
+			font-size: 14px;
+			font-weight: bold;
+			text-align: center;
+			padding: 12px 24px;
+			text-decoration: none;
+			border-radius: 4px;
+			margin-top: 16px;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th colspan="2" style="background-color: orange; color: white; font-size: 18px; font-weight: bold; text-align: center; padding: 16px;">Uma tarefa foi atribuída a você!📬</th>
+		</tr>
+	<tr>
+			<th style="background-color: #f2f2f2;">Tarefa</th>
+			<td>@{triggerOutputs()?['body/title']}</td>
+		</tr>
+		<tr>
+			<th style="background-color: #f2f2f2;">Descrição</th>
+			<td>@{outputs('Obter_detalhes_da_tarefa')?['body/description']}</td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2">
+				<a href="https://tasks.office.com/fatec.sp.gov.br/Home/PlanViews/Y8O4Q8bQCE690QLPcJTIfGQAECYF?Type=PlanLink&Channel=Link&CreatedTime=638166865126760000" target="_blank" class="button">Veja no Planner</a>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
